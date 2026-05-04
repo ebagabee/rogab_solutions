@@ -1,5 +1,9 @@
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
+import ImageGallery from '../components/ImageGallery.jsx'
+
+// Habilitar quando o e-mail de contato estiver configurado
+const SHOW_CONTACT = false
 
 const ACCENTS = [
   { color: '#3a7ca5', light: '#d6eaf8' },
@@ -71,6 +75,8 @@ export default function ProjectDetail() {
               <div className="detail-challenge">
                 {project.challenge}
               </div>
+
+              <ImageGallery images={project.images} accentColor={accent.color} />
             </div>
 
             {/* Sidebar */}
@@ -96,26 +102,29 @@ export default function ProjectDetail() {
                 </div>
               </div>
 
-              <div
-                className="detail-card"
-                style={{ background: accent.light, borderColor: accent.color + '33' }}
-              >
-                <p style={{ fontSize: '0.88rem', color: '#607080', lineHeight: 1.65 }}>
-                  Este projeto foi desenvolvido pela equipe Rogab Solutions com foco em qualidade
-                  e entrega ágil. Para saber mais, entre em contato.
-                </p>
-                <Link
-                  to="/#contato"
-                  className="btn btn-primary"
-                  style={{ marginTop: '16px', background: accent.color, width: '100%', justifyContent: 'center' }}
-                  onClick={(e) => {
-                    e.preventDefault()
-                    window.location.href = '/#contato'
-                  }}
+              {/* Para reativar: setar SHOW_CONTACT = true no topo do arquivo */}
+              {SHOW_CONTACT && (
+                <div
+                  className="detail-card"
+                  style={{ background: accent.light, borderColor: accent.color + '33' }}
                 >
-                  Fale conosco
-                </Link>
-              </div>
+                  <p style={{ fontSize: '0.88rem', color: '#607080', lineHeight: 1.65 }}>
+                    Este projeto foi desenvolvido pela equipe Rogab Solutions com foco em qualidade
+                    e entrega ágil. Para saber mais, entre em contato.
+                  </p>
+                  <Link
+                    to="/#contato"
+                    className="btn btn-primary"
+                    style={{ marginTop: '16px', background: accent.color, width: '100%', justifyContent: 'center' }}
+                    onClick={(e) => {
+                      e.preventDefault()
+                      window.location.href = '/#contato'
+                    }}
+                  >
+                    Fale conosco
+                  </Link>
+                </div>
+              )}
             </aside>
           </div>
         </div>

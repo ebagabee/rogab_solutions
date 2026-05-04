@@ -3,6 +3,9 @@ import { Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
 
+// Habilitar quando o e-mail de contato estiver configurado
+const SHOW_CONTACT = false
+
 const SERVICES = [
   {
     icon: '🖥️',
@@ -87,12 +90,14 @@ export default function Home() {
               }}>
                 Ver Projetos →
               </Link>
-              <Link to="#contato" className="btn btn-ghost" onClick={(e) => {
-                e.preventDefault()
-                document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
-              }}>
-                Fale conosco
-              </Link>
+              {SHOW_CONTACT && (
+                <Link to="#contato" className="btn btn-ghost" onClick={(e) => {
+                  e.preventDefault()
+                  document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })
+                }}>
+                  Fale conosco
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -180,19 +185,22 @@ export default function Home() {
       </section>
 
       {/* ── Contato ──────────────────────────────────────── */}
-      <section className="section section-alt" id="contato">
-        <div className="container">
-          <div className="contact-wrapper">
-            <h2 className="contact-title">Tem um projeto em mente?</h2>
-            <p className="contact-sub">
-              Nos conte o que você precisa. Respondemos rápido e sem enrolação.
-            </p>
-            <a href="mailto:contato@rogabsolutions.com.br" className="contact-email">
-              ✉️ contato@rogabsolutions.com.br
-            </a>
+      {/* Para reativar: setar SHOW_CONTACT = true no topo do arquivo */}
+      {SHOW_CONTACT && (
+        <section className="section section-alt" id="contato">
+          <div className="container">
+            <div className="contact-wrapper">
+              <h2 className="contact-title">Tem um projeto em mente?</h2>
+              <p className="contact-sub">
+                Nos conte o que você precisa. Respondemos rápido e sem enrolação.
+              </p>
+              <a href="mailto:contato@rogabsolutions.com.br" className="contact-email">
+                ✉️ contato@rogabsolutions.com.br
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
     </>
   )
 }

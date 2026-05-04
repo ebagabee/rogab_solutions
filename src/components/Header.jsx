@@ -1,6 +1,9 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 
+// Habilitar quando o e-mail de contato estiver configurado
+const SHOW_CONTACT = false
+
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -54,7 +57,7 @@ export default function Header() {
             { id: 'sobre',    label: 'Sobre'    },
             { id: 'servicos', label: 'Serviços' },
             { id: 'projetos', label: 'Projetos' },
-            { id: 'contato',  label: 'Contato'  },
+            ...(SHOW_CONTACT ? [{ id: 'contato', label: 'Contato' }] : []),
           ].map(({ id, label }) => (
             <a
               key={id}
@@ -64,13 +67,15 @@ export default function Header() {
               {label}
             </a>
           ))}
-          <a
-            className="nav-cta"
-            href="#contato"
-            onClick={(e) => { e.preventDefault(); scrollToSection('contato') }}
-          >
-            Fale conosco
-          </a>
+          {SHOW_CONTACT && (
+            <a
+              className="nav-cta"
+              href="#contato"
+              onClick={(e) => { e.preventDefault(); scrollToSection('contato') }}
+            >
+              Fale conosco
+            </a>
+          )}
         </nav>
       </div>
     </header>
