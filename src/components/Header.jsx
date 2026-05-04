@@ -1,0 +1,78 @@
+import { useState, useEffect } from 'react'
+import { useNavigate, useLocation } from 'react-router-dom'
+
+export default function Header() {
+  const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
+  useEffect(() => {
+    setMenuOpen(false)
+  }, [location])
+
+  const scrollToSection = (id) => {
+    setMenuOpen(false)
+    if (location.pathname !== '/') {
+      navigate('/')
+      setTimeout(() => {
+        document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+      }, 100)
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
+  return (
+    <header className={`header${scrolled ? ' scrolled' : ''}`}>
+      <div className="container header-inner">
+        <a
+          className="logo"
+          href="/"
+          onClick={(e) => { e.preventDefault(); navigate('/') }}
+        >
+          Rogab Solutions
+          <span className="logo-dot" />
+        </a>
+
+        <button
+          className={`hamburger${menuOpen ? ' open' : ''}`}
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label="Menu"
+        >
+          <span /><span /><span />
+        </button>
+
+        <nav className={`nav-links${menuOpen ? ' open' : ''}`}>
+          {[
+            { id: 'sobre',    label: 'Sobre'    },
+            { id: 'servicos', label: 'Serviços' },
+            { id: 'projetos', label: 'Projetos' },
+            { id: 'contato',  label: 'Contato'  },
+          ].map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => { e.preventDefault(); scrollToSection(id) }}
+            >
+              {label}
+            </a>
+          ))}
+          <a
+            className="nav-cta"
+            href="#contato"
+            onClick={(e) => { e.preventDefault(); scrollToSection('contato') }}
+          >
+            Fale conosco
+          </a>
+        </nav>
+      </div>
+    </header>
+  )
+}
