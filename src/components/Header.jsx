@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
 import logo from '../assets/logo.png'
 
-// Habilitar quando o e-mail de contato estiver configurado
-const SHOW_CONTACT = false
+const SHOW_CONTACT = true
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
