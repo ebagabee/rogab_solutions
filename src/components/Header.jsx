@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate, useLocation } from 'react-router-dom'
+import logo from '../assets/logo.png'
 
 // Habilitar quando o e-mail de contato estiver configurado
 const SHOW_CONTACT = false
@@ -40,8 +41,8 @@ export default function Header() {
           href="/"
           onClick={(e) => { e.preventDefault(); navigate('/') }}
         >
+          <img src={logo} alt="Rogab Solutions" className="logo-img" />
           Rogab Solutions
-          <span className="logo-dot" />
         </a>
 
         <button

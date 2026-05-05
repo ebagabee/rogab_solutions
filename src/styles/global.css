@@ -184,11 +184,12 @@ button { cursor: pointer; font-family: inherit; }
   gap: 10px;
 }
 
-.logo-dot {
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: var(--accent);
-  display: inline-block;
+.logo-img {
+  height: 38px;
+  width: auto;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  flex-shrink: 0;
 }
 
 .nav-links {
