@@ -1,82 +1,74 @@
-import lunnaChat        from '../assets/lunna/chat.png'
-import lunnaEntry       from '../assets/lunna/entry.png'
-import lunnaHome        from '../assets/lunna/home.png'
-import lunnaProfile     from '../assets/lunna/profile.png'
-import lunnaTransactions from '../assets/lunna/transaction_page.png'
-
-import kizzoBooking from '../assets/kizzo/booking.png'
-import kizzoLogin   from '../assets/kizzo/login.png'
-import kizzoStart   from '../assets/kizzo/start.png'
-
-import dtecDashboard from '../assets/dtec/dashboard.png'
-import dtecWelcome   from '../assets/dtec/welcome.png'
-
-import gcDashboard from '../assets/gc/dashboard.png'
-import gcLogin     from '../assets/gc/login.png'
-
 export const projects = [
   {
-    slug: "lunna",
-    name: "Lunna",
-    shortDescription: "Gerenciamento de finanças pessoais com Chat IA integrado",
+    slug: "finn",
+    name: "Finn",
+    shortDescription: "App de controle financeiro para MEIs e autônomos",
+    category: "Mobile App",
+    description: `Finn é um aplicativo mobile voltado para microempreendedores individuais e autônomos que precisam organizar suas finanças de forma simples e eficiente.
+O app permite registrar entradas e saídas, categorizar despesas, gerar relatórios mensais e acompanhar o fluxo de caixa em tempo real.`,
+    tags: ["Finanças", "MEI", "Mobile", "iOS", "Android"],
+    techs: ["React Native", "Node.js", "PostgreSQL"],
+    challenge: "Criar uma experiência mobile intuitiva para quem não tem familiaridade com gestão financeira, transformando dados complexos em visualizações simples e acionáveis.",
+    images: [],
+  },
+  {
+    slug: "apolocao",
+    name: "Apolocão",
+    shortDescription: "Aplicativo completo para gestão e agendamento em petshops",
+    category: "Mobile App",
+    description: `Apolocão é um aplicativo de petshop que conecta tutores e estabelecimentos, facilitando o agendamento de banho e tosa, consultas veterinárias e compra de produtos.
+O app oferece histórico de atendimentos, lembretes de vacinas e um catálogo completo de produtos para o pet.`,
+    tags: ["Petshop", "Agendamento", "Mobile", "E-commerce"],
+    techs: ["React Native", "Node.js", "MySQL"],
+    challenge: "Unificar em um único app o agendamento de serviços, venda de produtos e histórico de saúde do pet, oferecendo uma experiência fluida tanto para tutores quanto para os estabelecimentos.",
+    images: [],
+  },
+  {
+    slug: "snapmenu",
+    name: "SnapMenu",
+    shortDescription: "Cardápio digital e gestão de pedidos para restaurantes",
+    category: "Web App / Mobile",
+    description: `SnapMenu é uma solução completa para restaurantes e lanchonetes gerenciarem seus cardápios de forma digital e receberem pedidos diretamente pela plataforma.
+Clientes acessam o cardápio via QR Code, fazem pedidos e acompanham o status em tempo real. O estabelecimento gerencia tudo por um painel administrativo intuitivo.`,
+    tags: ["Restaurante", "QR Code", "Pedidos", "Web", "Mobile"],
+    techs: ["React", "React Native", "Node.js", "WebSocket", "PostgreSQL"],
+    challenge: "Sincronizar pedidos em tempo real entre o cliente, o caixa e a cozinha, reduzindo erros e o tempo de atendimento sem necessidade de impressoras ou sistemas legados.",
+    images: [],
+  },
+  {
+    slug: "nutriplus",
+    name: "Nutri+",
+    shortDescription: "Plataforma para nutricionistas gerenciarem pacientes e planos alimentares",
     category: "Web App",
-    description: `Lunna é uma plataforma de gerenciamento financeiro pessoal que integra um assistente de IA conversacional.
-O usuário pode adicionar, editar, visualizar e excluir transações financeiras diretamente pelo chat, criar metas financeiras e acompanhar sua evolução.`,
-    tags: ["Finanças", "IA", "Chat", "Web"],
-    techs: ["React", "Node.js", "IA Generativa"],
-    challenge: "Criar uma experiência fluida onde o usuário gerencia suas finanças por linguagem natural, sem precisar navegar por formulários complexos.",
-    images: [
-      { src: lunnaHome,         label: "Dashboard"    },
-      { src: lunnaChat,         label: "Chat IA"      },
-      { src: lunnaTransactions, label: "Transações"   },
-      { src: lunnaEntry,        label: "Entrada"      },
-      { src: lunnaProfile,      label: "Perfil"       },
-    ],
-  },
-  {
-    slug: "kizzo",
-    name: "Kizzo",
-    shortDescription: "Plataforma de aluguel de imóveis dentro do ecossistema Kizzo",
-    category: "Plataforma Web",
-    description: `Kizzo é uma plataforma completa de aluguel de imóveis, funcionando como um ecossistema próprio.
-Conecta proprietários e inquilinos em um ambiente controlado, com fluxos de contratação, visualização de imóveis e gestão de contratos.`,
-    tags: ["Imóveis", "Marketplace", "Web"],
+    description: `Nutri+ é uma plataforma web desenvolvida para nutricionistas que precisam gerenciar consultas, pacientes e planos alimentares de forma centralizada.
+Inclui montagem de dietas personalizadas, acompanhamento de evolução, relatórios nutricionais e comunicação direta com o paciente via chat integrado.`,
+    tags: ["Saúde", "Nutrição", "Gestão", "Web"],
     techs: ["React", "Node.js", "PostgreSQL"],
-    challenge: "Desenvolver um marketplace de imóveis com múltiplos perfis de usuário e fluxos distintos de contratação.",
-    images: [
-      { src: kizzoStart,   label: "Início"   },
-      { src: kizzoLogin,   label: "Login"    },
-      { src: kizzoBooking, label: "Reserva"  },
-    ],
+    challenge: "Digitalizar o fluxo de trabalho de nutricionistas independentes, que antes dependiam de planilhas e documentos avulsos, centralizando tudo em um ambiente seguro e fácil de usar.",
+    images: [],
   },
   {
-    slug: "dtec",
-    name: "DTEC",
-    shortDescription: "Plataforma de cotação de mercado entre fornecedores e compradores",
-    category: "B2B / Web App",
-    description: `DTEC é uma plataforma de cotação no modelo leilão reverso, conectando fornecedores e compradores de mercado.
-Os compradores publicam demandas e fornecedores competem com propostas, garantindo melhores preços e condições.`,
-    tags: ["B2B", "Cotação", "Leilão", "Web"],
-    techs: ["React", "Node.js", "WebSocket"],
-    challenge: "Implementar o modelo de leilão reverso em tempo real com notificações e atualização dinâmica de propostas.",
-    images: [
-      { src: dtecWelcome,   label: "Boas-vindas" },
-      { src: dtecDashboard, label: "Dashboard"   },
-    ],
+    slug: "trackfit",
+    name: "TrackFit",
+    shortDescription: "App de acompanhamento de treinos e evolução física",
+    category: "Mobile App",
+    description: `TrackFit é um aplicativo mobile para quem pratica atividades físicas e quer acompanhar sua evolução de forma detalhada.
+O app permite criar planos de treino, registrar séries e repetições, monitorar medidas corporais e visualizar gráficos de progresso ao longo do tempo.`,
+    tags: ["Saúde", "Fitness", "Treino", "Mobile", "iOS", "Android"],
+    techs: ["React Native", "Node.js", "SQLite"],
+    challenge: "Criar uma experiência mobile rápida e offline-first, permitindo que o usuário registre treinos mesmo sem conexão com a internet, sincronizando os dados quando a rede estiver disponível.",
+    images: [],
   },
   {
-    slug: "ginastica-do-cerebro",
-    name: "Ginástica do Cérebro",
-    shortDescription: "Sistema de gestão de franquia e franqueadoras da escola Ginástica do Cérebro",
-    category: "Sistema Web",
-    description: `Sistema desenvolvido para a rede de franquias Ginástica do Cérebro, permitindo a gestão centralizada de franqueadoras e franqueados.
-Inclui controle de unidades, alunos, relatórios e comunicação entre os níveis da rede.`,
-    tags: ["Franquia", "Educação", "Gestão", "Web"],
-    techs: ["React", "Node.js", "MySQL"],
-    challenge: "Criar uma hierarquia de permissões clara entre franqueadora, franqueado e operadores, com dashboards específicos para cada nível.",
-    images: [
-      { src: gcLogin,     label: "Login"     },
-      { src: gcDashboard, label: "Dashboard" },
-    ],
+    slug: "valore",
+    name: "Valore",
+    shortDescription: "Marketplace de compra e venda de imóveis com tour virtual",
+    category: "Plataforma Web",
+    description: `Valore é um marketplace imobiliário que conecta compradores, vendedores e corretores em uma plataforma moderna e transparente.
+Diferencial: suporte a tour virtual 360°, filtros avançados de busca, comparativo de imóveis e sistema de proposta integrado.`,
+    tags: ["Imóveis", "Marketplace", "Tour Virtual", "Web"],
+    techs: ["React", "Node.js", "PostgreSQL", "AWS S3"],
+    challenge: "Desenvolver um marketplace com múltiplos perfis de usuário — comprador, vendedor e corretor — cada um com fluxos distintos, mantendo a experiência simples e a navegação intuitiva.",
+    images: [],
   },
 ]
