@@ -1,17 +1,18 @@
 import React from 'react'
-import ReactDOM from 'react-dom/client'
+import { createRoot, hydrateRoot } from 'react-dom/client'
 import App from './App.jsx'
 import './styles/global.css'
-import logoUrl from './assets/logo.png'
 
-const favicon = document.createElement('link')
-favicon.rel = 'icon'
-favicon.type = 'image/png'
-favicon.href = logoUrl
-document.head.appendChild(favicon)
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = document.getElementById('root')
+const app = (
   <React.StrictMode>
     <App />
-  </React.StrictMode>,
+  </React.StrictMode>
 )
+
+// Páginas pré-renderizadas (SSG) já têm HTML: hidrata. Caso contrário, monta do zero.
+if (root.firstElementChild) {
+  hydrateRoot(root, app)
+} else {
+  createRoot(root).render(app)
+}
