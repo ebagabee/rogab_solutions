@@ -72,7 +72,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>●</span> Fábrica de software · desde 2023
+              <span>●</span> Fábrica de software
             </div>
             <h1 className="hero-title">
               Entregamos solução<br />
@@ -80,7 +80,7 @@ export default function Home() {
               e com <em>qualidade absoluta.</em>
             </h1>
             <p className="hero-sub">
-              Da ideia ao deploy — desenvolvemos sistemas web e mobile com foco em resultado,
+              Da ideia ao deploy: desenvolvemos sistemas web e mobile com foco em resultado,
               agilidade e código que dura.
             </p>
             <div className="hero-actions">
@@ -114,12 +114,12 @@ export default function Home() {
               <h2 className="section-title">Uma fábrica de software orientada a resultado</h2>
               <p className="section-sub">
                 Somos uma equipe de desenvolvedores em atuação desde 2023, focada em entregar soluções
-                digitais completas — do briefing ao deploy. Atendemos desde projetos pontuais até parcerias
+                digitais completas, do briefing ao deploy. Atendemos desde projetos pontuais até parcerias
                 de longo prazo, sempre com comunicação clara, prazos cumpridos e código de qualidade.
               </p>
               <p className="section-sub" style={{ marginTop: '16px' }}>
                 Construímos soluções sob medida para empresas de diferentes segmentos, tratando cada projeto
-                com foco no funcionamento real do negócio — não só no código.
+                com foco no funcionamento real do negócio, não só no código.
               </p>
 
               <div className="sobre-values" style={{ marginTop: '32px' }}>
@@ -158,7 +158,7 @@ export default function Home() {
           <span className="section-label">O que fazemos</span>
           <h2 className="section-title">Nossos serviços</h2>
           <p className="section-sub">
-            Atuamos em toda a cadeia de desenvolvimento de software — da concepção ao pós-lançamento.
+            Atuamos em toda a cadeia de desenvolvimento de software, da concepção ao pós-lançamento.
           </p>
 
           <div className="services-grid">
@@ -179,7 +179,7 @@ export default function Home() {
           <span className="section-label">Portfólio</span>
           <h2 className="section-title">Projetos desenvolvidos</h2>
           <p className="section-sub">
-            Cada projeto é resultado de uma parceria real — problemas reais resolvidos com tecnologia bem aplicada.
+            Cada projeto é resultado de uma parceria real: problemas reais resolvidos com tecnologia bem aplicada.
           </p>
 
           <div className="projects-grid">
