@@ -16,7 +16,7 @@ export default function ProjectCard({ project, index }) {
 
       <div className="project-card-header">
         <div className="project-card-icon" style={{ background: accent.iconBg }}>
-          {accent.emoji}
+          {project.icon || accent.emoji}
         </div>
         <span className="project-category">{project.category}</span>
       </div>
@@ -36,6 +36,16 @@ export default function ProjectCard({ project, index }) {
         <Link to={`/projetos/${project.slug}`} className="btn btn-outline">
           Ver mais →
         </Link>
+        {project.url && (
+          <a
+            href={project.url}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="project-card-live"
+          >
+            Site ao vivo ↗
+          </a>
+        )}
       </div>
     </article>
   )

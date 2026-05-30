@@ -9,28 +9,28 @@ const WHATSAPP_URL = 'https://wa.me/5582993707473'
 const SERVICES = [
   {
     icon: '🖥️',
-    name: 'Desenvolvimento Web e Mobile',
-    desc: 'Do protótipo até a produção — sistemas web e apps mobile completos, escaláveis e bem construídos.',
-  },
-  {
-    icon: '🔧',
-    name: 'Sustentação de Sistemas',
-    desc: 'Manutenção corretiva e evolutiva de sistemas existentes, sob demanda e com SLA definido.',
-  },
-  {
-    icon: '🔒',
-    name: 'Segurança',
-    desc: 'Análise de vulnerabilidades, hardening e implementação de boas práticas de segurança em aplicações.',
+    name: 'Desenvolvimento',
+    desc: 'Sites, landing pages, apps mobile (iOS e Android), sistemas web, plataformas SaaS, APIs, integrações e e-commerces.',
   },
   {
     icon: '🤖',
-    name: 'Chatbot',
-    desc: 'Automação de atendimento com bots inteligentes integrados a IA generativa e fluxos personalizados.',
+    name: 'IA e Automação',
+    desc: 'Chatbots e assistentes virtuais com OpenAI, Gemini e Claude, automação de processos (RPA) e análise de dados.',
   },
   {
-    icon: '⚡',
-    name: 'Automações',
-    desc: 'Eliminação de processos manuais repetitivos com scripts, integrações e fluxos automatizados.',
+    icon: '🎨',
+    name: 'Design e Experiência',
+    desc: 'UI/UX Design, prototipação, wireframes e design systems para produtos consistentes e agradáveis de usar.',
+  },
+  {
+    icon: '☁️',
+    name: 'Infraestrutura e Qualidade',
+    desc: 'Deploy em nuvem (AWS, GCP, Azure), monitoramento, testes automatizados, segurança e performance.',
+  },
+  {
+    icon: '🧭',
+    name: 'Consultoria',
+    desc: 'Arquitetura de software, code review, mentoria técnica e apoio à transformação digital.',
   },
 ]
 
@@ -72,7 +72,7 @@ export default function Home() {
         <div className="container">
           <div className="hero-content">
             <div className="hero-badge">
-              <span>●</span> Software House
+              <span>●</span> Fábrica de software · desde 2023
             </div>
             <h1 className="hero-title">
               Entregamos solução<br />
@@ -113,9 +113,13 @@ export default function Home() {
               <span className="section-label">Sobre nós</span>
               <h2 className="section-title">Uma fábrica de software orientada a resultado</h2>
               <p className="section-sub">
-                A Rogab Solutions nasceu com um propósito claro: transformar ideias em produtos digitais
-                de alta qualidade, no menor tempo possível. Somos uma equipe técnica enxuta e focada,
-                que entrega do MVP à produção com responsabilidade e transparência.
+                Somos uma equipe de desenvolvedores em atuação desde 2023, focada em entregar soluções
+                digitais completas — do briefing ao deploy. Atendemos desde projetos pontuais até parcerias
+                de longo prazo, sempre com comunicação clara, prazos cumpridos e código de qualidade.
+              </p>
+              <p className="section-sub" style={{ marginTop: '16px' }}>
+                Construímos soluções sob medida para empresas de diferentes segmentos, tratando cada projeto
+                com foco no funcionamento real do negócio — não só no código.
               </p>
 
               <div className="sobre-values" style={{ marginTop: '32px' }}>
@@ -131,9 +135,9 @@ export default function Home() {
 
             <div className="sobre-visual">
               {[
-                { icon: '🚀', number: '4+', label: 'Projetos entregues' },
-                { icon: '📐', number: '100%', label: 'Do protótipo ao deploy' },
-                { icon: '⚡', number: '5', label: 'Serviços especializados' },
+                { icon: '🚀', number: '2023', label: 'Atuando desde' },
+                { icon: '📐', number: '100%', label: 'Do briefing ao deploy' },
+                { icon: '⚡', number: '5', label: 'Áreas de atuação' },
               ].map((s) => (
                 <div key={s.label} className="stat-card animate-on-scroll">
                   <div className="stat-icon">{s.icon}</div>

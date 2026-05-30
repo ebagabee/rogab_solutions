@@ -533,7 +533,20 @@ button { cursor: pointer; font-family: inherit; }
 
 .project-card-footer {
   margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
 }
+
+.project-card-live {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: color var(--transition);
+}
+.project-card-live:hover { color: var(--primary); }
 
 /* ─── Contato ────────────────────────────────────────────────── */
 .contact-wrapper {

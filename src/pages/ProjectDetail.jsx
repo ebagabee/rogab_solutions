@@ -59,6 +59,18 @@ export default function ProjectDetail() {
 
           <h1 className="detail-title">{project.name}</h1>
           <p className="detail-short">{project.shortDescription}</p>
+
+          {project.url && (
+            <a
+              href={project.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn btn-primary"
+              style={{ marginTop: '24px', background: accent.color }}
+            >
+              Ver site ao vivo ↗
+            </a>
+          )}
         </div>
       </section>
 
