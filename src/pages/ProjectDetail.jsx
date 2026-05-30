@@ -3,7 +3,7 @@ import { projects } from '../data/projects.js'
 import ImageGallery from '../components/ImageGallery.jsx'
 
 const SHOW_CONTACT = true
-const WHATSAPP_URL = 'https://wa.me/5582988346674'
+const WHATSAPP_URL = 'https://wa.me/5582993707473'
 
 const ACCENTS = [
   { color: '#3a7ca5', light: '#d6eaf8' },
