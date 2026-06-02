@@ -1,21 +1,26 @@
 import { Link } from 'react-router-dom'
+import { useTheme } from '../lib/theme.jsx'
 
 const ACCENTS = [
-  { bar: '#3a7ca5', iconBg: '#d6eaf8', emoji: '💡' },
-  { bar: '#6dbaaa', iconBg: '#d4efe9', emoji: '🏡' },
-  { bar: '#7c6dbf', iconBg: '#e8e4f8', emoji: '📊' },
-  { bar: '#bf8a3a', iconBg: '#f8ecd4', emoji: '🎓' },
+  { bar: '#3a7ca5', iconBg: '#d6eaf8', iconBgDark: '#162d45', emoji: '💡' },
+  { bar: '#e8601a', iconBg: '#fde8d9', iconBgDark: '#3d1a08', emoji: '🏡' },
+  { bar: '#2c6188', iconBg: '#d0e5f5', iconBgDark: '#0d2a40', emoji: '📊' },
+  { bar: '#e8a020', iconBg: '#fdf3d9', iconBgDark: '#3d2c08', emoji: '🎓' },
 ]
 
 export default function ProjectCard({ project, index }) {
   const accent = ACCENTS[index % ACCENTS.length]
+  const { theme } = useTheme()
 
   return (
     <article className="project-card animate-on-scroll">
       <div className="project-card-accent" style={{ background: accent.bar }} />
 
       <div className="project-card-header">
-        <div className="project-card-icon" style={{ background: accent.iconBg }}>
+        <div
+          className="project-card-icon"
+          style={{ background: theme === 'dark' ? accent.iconBgDark : accent.iconBg }}
+        >
           {project.icon || accent.emoji}
         </div>
         <span className="project-category">{project.category}</span>

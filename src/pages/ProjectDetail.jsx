@@ -1,21 +1,23 @@
 import { useParams, Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 import ImageGallery from '../components/ImageGallery.jsx'
+import { useTheme } from '../lib/theme.jsx'
 
 const SHOW_CONTACT = true
 const WHATSAPP_URL = 'https://wa.me/5582993707473'
 
 const ACCENTS = [
-  { color: '#3a7ca5', light: '#d6eaf8' },
-  { color: '#6dbaaa', light: '#d4efe9' },
-  { color: '#7c6dbf', light: '#e8e4f8' },
-  { color: '#bf8a3a', light: '#f8ecd4' },
+  { color: '#3a7ca5', light: '#d6eaf8', lightDark: '#162d45' },
+  { color: '#e8601a', light: '#fde8d9', lightDark: '#3d1a08' },
+  { color: '#2c6188', light: '#d0e5f5', lightDark: '#0d2a40' },
+  { color: '#e8a020', light: '#fdf3d9', lightDark: '#3d2c08' },
 ]
 
 export default function ProjectDetail() {
   const { slug } = useParams()
   const index = projects.findIndex((p) => p.slug === slug)
   const project = projects[index]
+  const { theme } = useTheme()
 
   if (!project) {
     return (
@@ -33,6 +35,7 @@ export default function ProjectDetail() {
   }
 
   const accent = ACCENTS[index % ACCENTS.length]
+  const accentBg = theme === 'dark' ? accent.lightDark : accent.light
 
   return (
     <div className="detail-page">
@@ -48,7 +51,7 @@ export default function ProjectDetail() {
           <div className="detail-meta">
             <span
               className="project-category"
-              style={{ background: accent.light, borderColor: accent.color + '44', color: accent.color }}
+              style={{ background: accentBg, borderColor: accent.color + '44', color: accent.color }}
             >
               {project.category}
             </span>
@@ -117,9 +120,9 @@ export default function ProjectDetail() {
               {SHOW_CONTACT && (
                 <div
                   className="detail-card"
-                  style={{ background: accent.light, borderColor: accent.color + '33' }}
+                  style={{ background: accentBg, borderColor: accent.color + '33' }}
                 >
-                  <p style={{ fontSize: '0.88rem', color: '#607080', lineHeight: 1.65 }}>
+                  <p style={{ fontSize: '0.88rem', color: 'var(--text-muted)', lineHeight: 1.65 }}>
                     Gostou do que viu? Fale com a gente pelo WhatsApp e conte seu projeto.
                   </p>
                   <a
