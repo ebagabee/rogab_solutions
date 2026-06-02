@@ -187,6 +187,12 @@ export default function Home() {
               <ProjectCard key={project.slug} project={project} index={i} />
             ))}
           </div>
+
+          <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
+            <Link to="/projetos" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: '1rem' }}>
+              Ver todos os projetos →
+            </Link>
+          </div>
         </div>
       </section>
 
