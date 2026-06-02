@@ -4,7 +4,7 @@ import ImageGallery from '../components/ImageGallery.jsx'
 import { useTheme } from '../lib/theme.jsx'
 
 const SHOW_CONTACT = true
-const WHATSAPP_URL = 'https://wa.me/5582918281788'
+const WHATSAPP_URL = 'https://wa.me/5582991828178'
 
 const ACCENTS = [
   { color: '#3a7ca5', light: '#d6eaf8', lightDark: '#162d45' },
