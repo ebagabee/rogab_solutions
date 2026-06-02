@@ -4,7 +4,7 @@ import { projects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
 
 const SHOW_CONTACT = true
-const WHATSAPP_URL = 'https://wa.me/5582918281788'
+const WHATSAPP_URL = 'https://wa.me/5582991828178'
 
 const SERVICES = [
   {

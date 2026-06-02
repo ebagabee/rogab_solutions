@@ -6,7 +6,7 @@ import ProjectDetail from './pages/ProjectDetail.jsx'
 import AllProjects from './pages/AllProjects.jsx'
 import { useSeo } from './lib/seo.js'
 
-const WHATSAPP_URL = 'https://wa.me/5582918281788'
+const WHATSAPP_URL = 'https://wa.me/5582991828178'
 
 function WhatsAppFab() {
   return (
