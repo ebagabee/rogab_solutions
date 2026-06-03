@@ -69,7 +69,7 @@ export default function Home() {
     <>
       {/* ── Hero ─────────────────────────────────────────── */}
       <section className="hero" id="hero">
-        <div className="container">
+        <div className="container hero-container">
           <div className="hero-content">
             <div className="hero-badge">
               <span>●</span> Fábrica de software
@@ -101,6 +101,10 @@ export default function Home() {
                 </a>
               )}
             </div>
+          </div>
+          <div className="hero-image-wrapper">
+            <img src="/images/rogab-escuro.png" alt="Rogab Solutions" className="hero-logo-img light-only" />
+            <img src="/images/rogab-branco.png" alt="Rogab Solutions" className="hero-logo-img dark-only" />
           </div>
         </div>
       </section>

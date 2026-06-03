@@ -372,6 +372,49 @@ button { cursor: pointer; font-family: inherit; }
   flex-wrap: wrap;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.hero-image-wrapper {
+  flex-shrink: 0;
+  max-width: 45%;
+  animation: fadeInUp 1s ease both;
+  animation-delay: 0.2s;
+}
+
+.hero-logo-img {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  object-fit: contain;
+}
+
+.dark-only {
+  display: none;
+}
+
+[data-theme="dark"] .light-only {
+  display: none;
+}
+
+[data-theme="dark"] .dark-only {
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .hero-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+  .hero-image-wrapper {
+    display: none;
+  }
+}
+
 /* ─── Section ────────────────────────────────────────────────── */
 .section {
   padding-block: 96px;
