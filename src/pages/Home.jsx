@@ -117,7 +117,7 @@ export default function Home() {
               <span className="section-label">Sobre nós</span>
               <h2 className="section-title">Uma fábrica de software orientada a resultado</h2>
               <p className="section-sub">
-                Somos uma equipe de desenvolvedores em atuação desde 2023, focada em entregar soluções
+                Somos uma equipe de desenvolvedores em atuação desde 2026, focada em entregar soluções
                 digitais completas, do briefing ao deploy. Atendemos desde projetos pontuais até parcerias
                 de longo prazo, sempre com comunicação clara, prazos cumpridos e código de qualidade.
               </p>
@@ -139,8 +139,9 @@ export default function Home() {
 
             <div className="sobre-visual">
               {[
-                { icon: '🚀', number: '2023', label: 'Atuando desde' },
+                { icon: '🚀', number: '2026', label: 'Atuando desde' },
                 { icon: '📐', number: '100%', label: 'Do briefing ao deploy' },
+                { icon: '💼', number: '20+', label: 'Projetos entregues' },
                 { icon: '⚡', number: '5', label: 'Áreas de atuação' },
               ].map((s) => (
                 <div key={s.label} className="stat-card animate-on-scroll">
@@ -194,7 +195,7 @@ export default function Home() {
 
           <div style={{ display: 'flex', justifyContent: 'center', marginTop: '48px' }}>
             <Link to="/projetos" className="btn btn-outline" style={{ padding: '14px 36px', fontSize: '1rem' }}>
-              Ver todos os projetos →
+              Ver Outros →
             </Link>
           </div>
         </div>
