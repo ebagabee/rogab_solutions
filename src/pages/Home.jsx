@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useEffect, useRef, useState, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { projects } from '../data/projects.js'
 import ProjectCard from '../components/ProjectCard.jsx'
@@ -60,6 +60,88 @@ function useScrollAnimation() {
     return () => observer.disconnect()
   }, [])
   return ref
+}
+
+const CAROUSEL_VISIBLE = 3
+const AUTOPLAY_INTERVAL = 3500
+
+function ServicesCarousel() {
+  const [current, setCurrent] = useState(0)
+  const [paused, setPaused] = useState(false)
+  const [animating, setAnimating] = useState(false)
+  const timerRef = useRef(null)
+  const total = SERVICES.length
+
+  const goTo = useCallback((idx, wrap = true) => {
+    if (animating) return
+    setAnimating(true)
+    const next = wrap ? (idx + total) % total : idx
+    setCurrent(next)
+    setTimeout(() => setAnimating(false), 450)
+  }, [animating, total])
+
+  const next = useCallback(() => goTo(current + 1), [current, goTo])
+  const prev = useCallback(() => goTo(current - 1), [current, goTo])
+
+  useEffect(() => {
+    if (paused) return
+    timerRef.current = setInterval(next, AUTOPLAY_INTERVAL)
+    return () => clearInterval(timerRef.current)
+  }, [paused, next])
+
+  // Build the ordered slice to show
+  const getVisibleCards = () => {
+    const cards = []
+    for (let i = 0; i < CAROUSEL_VISIBLE; i++) {
+      cards.push(SERVICES[(current + i) % total])
+    }
+    return cards
+  }
+
+  return (
+    <div
+      className="services-carousel"
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+    >
+      <button
+        className="carousel-btn carousel-btn-prev"
+        onClick={prev}
+        aria-label="Serviço anterior"
+      >
+        ‹
+      </button>
+
+      <div className={`carousel-track ${animating ? 'carousel-fade' : ''}`}>
+        {getVisibleCards().map((s, i) => (
+          <div key={`${s.name}-${current}-${i}`} className="service-card carousel-card">
+            <span className="service-icon">{s.icon}</span>
+            <div className="service-name">{s.name}</div>
+            <div className="service-desc">{s.desc}</div>
+          </div>
+        ))}
+      </div>
+
+      <button
+        className="carousel-btn carousel-btn-next"
+        onClick={next}
+        aria-label="Próximo serviço"
+      >
+        ›
+      </button>
+
+      <div className="carousel-indicators">
+        {SERVICES.map((_, i) => (
+          <button
+            key={i}
+            className={`carousel-dot ${i === current ? 'active' : ''}`}
+            onClick={() => goTo(i, false)}
+            aria-label={`Ir para serviço ${i + 1}`}
+          />
+        ))}
+      </div>
+    </div>
+  )
 }
 
 export default function Home() {
@@ -166,7 +248,11 @@ export default function Home() {
             Atuamos em toda a cadeia de desenvolvimento de software, da concepção ao pós-lançamento.
           </p>
 
-          <div className="services-grid">
+          {/* Desktop: carrossel automático */}
+          <ServicesCarousel />
+
+          {/* Mobile: grid original */}
+          <div className="services-grid services-grid-mobile">
             {SERVICES.map((s) => (
               <div key={s.name} className="service-card animate-on-scroll">
                 <span className="service-icon">{s.icon}</span>
